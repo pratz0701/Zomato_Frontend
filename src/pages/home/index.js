@@ -8,7 +8,7 @@ import NightLife from '../../components/nightlife';
 import Filters from "../../components/common/filters";
 import DeliveryCollections from '../../components/delivery/delivery collection';
 
-
+//  i hate u
     const HomePage = () => {
        const [activeTab, setActiveTab]= useState("Delivery");
 
