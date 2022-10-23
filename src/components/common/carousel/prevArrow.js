@@ -14,8 +14,7 @@ const PrevArrow = (props) => {
     }}
     onClick ={onClick}
     ></div>
-
-  )
-}
+  );
+};
 
 export default PrevArrow

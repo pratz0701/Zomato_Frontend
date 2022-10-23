@@ -1,7 +1,9 @@
 import React from 'react';
+import ExploreSection from '../common/explore';
 import Filters from '../common/filters';
 import DeliveryCollections from './delivery collection';
 import "./delivery.css";
+import TopBrands from './topbrands';
 
 
 const deliveryFilters=[
@@ -52,6 +54,8 @@ const Delivery = () => {
       </div>
       <div>
         <DeliveryCollections />
+        <TopBrands />
+        <ExploreSection />
       </div>
 
     </div>

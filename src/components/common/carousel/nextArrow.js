@@ -14,8 +14,7 @@ const NextArrow = (props) => {
     }}
     onClick ={onClick}
     ></div>
-
-  )
-}
+  );
+};
 
 export default NextArrow

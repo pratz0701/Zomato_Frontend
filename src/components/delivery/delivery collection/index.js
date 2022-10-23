@@ -3,7 +3,8 @@ import Slider from "react-slick"
 import "./deliveryCollections.css"
 import NextArrow from '../../common/carousel/nextArrow';
 import PrevArrow from '../../common/carousel/prevArrow';
-import Carousel from "react-grid-carousel";
+import DeliveryItem from "./deliveryItem"
+import { Carousel } from 'react-responsive-carousel';
 
 const deliveryItems=[
     {
@@ -49,9 +50,12 @@ const deliveryItems=[
     },
 ];
 
+
+
 const settings = {
+    infinite:false,
     slidesToShow:4,
-    sLidesToScroll:1,
+    slidesToScroll:1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
 };
@@ -63,7 +67,7 @@ const DeliveryCollections = () => {
             <div className='collection-title'>Eat what makes you happy</div>
             <Slider {...settings}>
                 {deliveryItems.map((item)=> {
-                    return <div>{item.title}</div>
+                    return <DeliveryItem item ={item} />
                 })}
             </Slider>
         </div>
