@@ -1,8 +1,18 @@
 import React from 'react'
-
-const ExploreSection = () => {
+import ExploreCard from './exploreCards';
+import { restaurants } from '../../../data/restaurants'
+import './explore.css';
+const ExploreSection = ({list, collectionName}) => {
+  // console.log(restaurants);
   return (
-    <div>ExploreSection</div>
+    <div className='max-width explore-section'>
+      <div className='collection-title'>{collectionName}</div>
+      <div className='explore-grid'>
+      {list.map((restaurants)=>{
+        return <ExploreCard restaurant={restaurants}/>
+      })}
+      </div>
+    </div>
   )
 }
 
