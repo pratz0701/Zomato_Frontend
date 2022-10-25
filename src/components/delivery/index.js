@@ -1,4 +1,5 @@
 import React from 'react';
+import { restaurants } from '../../data/restaurants';
 import ExploreSection from '../common/explore';
 import Filters from '../common/filters';
 import DeliveryCollections from './delivery collection';
@@ -45,7 +46,7 @@ const deliveryFilters=[
     title: "Great Offers",
   },
 ];
-
+const restaurantList = restaurants;
 const Delivery = () => {
   return (
     <div>
@@ -55,7 +56,7 @@ const Delivery = () => {
       <div>
         <DeliveryCollections />
         <TopBrands />
-        <ExploreSection />
+        <ExploreSection list={restaurantList} collectionName='Delivery Restaurants in Gurugram' />
       </div>
 
     </div>
