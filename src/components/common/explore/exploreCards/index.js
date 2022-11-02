@@ -29,13 +29,14 @@ const ExploreCard = ({ restaurant }) => {
                       src="https://b.zmtcdn.com/data/dish_images/c2f22c42f7ba90d81440a88449f4e5891634806087.png"
                       alt={e.res_name}
                       className="explore-card-image"
+                      
                     />
                     <div className="delivery-time">40 min</div>
-                    <div className="pro-off">proOff</div>
-                    <div className="discount absolute-center">discount</div>
+                    <div className="pro-off">ProOff</div>
+                    <div className="discount absolute-center">Discount</div>
                   </div>
                   <div className="res-row">
-                    <div className="res-name">{e.res_name}</div>
+                    <div className="res-name" style={{textTransform:"capitalize"}}>{e.res_name}</div>
                     {1 && (
                       <div className="res-rating absolute-center">
                         {} <i className="fi fi-rr-star absolute-center"></i>
