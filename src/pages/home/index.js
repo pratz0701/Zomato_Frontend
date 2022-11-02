@@ -6,6 +6,8 @@ import Delivery from "../../components/delivery";
 import DiningOut from "../../components/dining out";
 import NightLife from '../../components/nightlife';
 
+
+
     const HomePage = () => {
        const [activeTab, setActiveTab]= useState("Delivery");
 
@@ -23,6 +25,7 @@ import NightLife from '../../components/nightlife';
     );
     };
 
+
     const getCorrectScreen = (tab) => {
         // eslint-disable-next-line default-case
         switch (tab){
@@ -36,6 +39,7 @@ import NightLife from '../../components/nightlife';
                 return <Delivery />;
         }
     }
+
 
 
 export default HomePage;

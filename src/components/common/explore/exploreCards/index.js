@@ -1,68 +1,82 @@
-import React from 'react';
-import './exploreCard.css';
+import React, { useEffect } from "react";
+import "./exploreCard.css";
+import "../explore.css";
+// import { FcApproval } from "react-icons/fc";
+// import { FaGithub } from "react-icons/fa";
 
 const ExploreCard = ({ restaurant }) => {
-    const name = restaurant?.info?.name ?? "";
-    const coverImg = restaurant?.info?.image?.url;
-    const deliveryTime = restaurant?.order?.deliveryTime;
-    const rating = restaurant?.info?.rating?.rating_text;
-    const approxPrice = restaurant?.info?.cfo?.text;
-    const offers = restaurant?.bulkOffers ?? [];
-    const cuisines = restaurant?.info?.cuisine?.map((item) => item.name).slice(0, 3);
-    const bottomContainers = restaurant.bottomContainers;
-    const proOff = offers.length > 1 ? offers[0].text : null;
-    const discount =
-        offers.length > 1
-            ? offers[1].text
-            : offers.length === 1
-                ? offers[0].text
-                : null;
+  useEffect(() => {
+    console.log(JSON.parse(JSON.stringify(restaurant)));
+  }, [restaurant]);
 
-    return (
-        <div className='explore-card cur-po'>
-            <div className='explore-card-cover'>
-                <img src={coverImg} alt={name} className="explore-card-image" />
-                <div className='delivery-time'>{deliveryTime}</div>
-                {proOff && <div className='pro-off'>{proOff}</div>}
-                {discount && <div className="discount absolute-center">{discount}</div>}
-            </div>
-            <div className='res-row'>
-                <div className='res-name'>{name}</div>
-                {rating && (<div className='res-rating absolute-center'>
-                    {rating} <i className='fi fi-rr-star absolute-center'></i>
-                </div>
-                )}
-            </div>
-            <div className='res-row'>
-                {cuisines.length && (
-                    <div className='res-cuisine'>
-                        {cuisines.map((item, i) => {
-                            return (
-                                <span className='res-cuisine-tag'>
-                                    {item}
-                                    {i !== cuisines.length - 1 && ","}
-                                </span>
-                            );
-                        })}
-                    </div>
-                )}
-                {approxPrice && <div className='res-price'>{approxPrice}</div>}
-            </div>
-            {bottomContainers.length > 0 && (
-                <div>
-                    <div className="card-separator"></div>
-                    <div className="explore-bottom">
-                        <img
-                            src={bottomContainers[0]?.image?.url}
-                            alt={bottomContainers[0]?.text}
-                            style={{ height: "18px" }}
-                        />
-                        <div className="res-bottom-text">{bottomContainers[0]?.text}</div>
-                    </div>
-                </div>
-            )}
+  return (
+    <div>
+      <div className="collection-title max-width">
+        Order Online Food in Gurugram
+      </div>
+      <div className="max-width explore-section">
+        <div className="explore-grid">
+          <div>
+            {JSON.parse(JSON.stringify(restaurant)).map((e) => {
+              return (
+                <img src="https://i.ytimg.com/vi/Yg3GQemWXgc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBwFEL4wMdI7jHbTq38_eoxboF_SA" alt='land'/>
+                // <div className="explore-card cur-po">
+                //   <div className="explore-card-cover">
+                //     <img
+                //       src="https://b.zmtcdn.com/data/dish_images/c2f22c42f7ba90d81440a88449f4e5891634806087.png"
+                //       alt={e.res_name}
+                //       className="explore-card-image"
+                //     />
+                //     <div className="delivery-time">40 min</div>
+                //     <div className="pro-off">proOff</div>
+                //     <div className="discount absolute-center">discount</div>
+                //   </div>
+                //   <div className="res-row">
+                //     <div className="res-name">{e.res_name}</div>
+                //     {1 && (
+                //       <div className="res-rating absolute-center">
+                //         {} <i className="fi fi-rr-star absolute-center"></i>
+                //       </div>
+                //     )}
+                //   </div>
+                //   <div className="res-row">
+                //     {
+                //       // <div className='res-cuisine'>
+                //       {
+                //         /* {cuisines.map((item, i) => {
+                //             return (
+                //                 <span className='res-cuisine-tag'>
+                //                     {item}
+                //                     {i !== cuisines.length - 1 && ","}
+                //                 </span>
+                //             );
+                //         })} */
+                //       }
+                //       // </div>
+                //     }
+                //     {1 && <div className="res-price">100rs</div>}
+                //   </div>
+                //   {1 > 0 && (
+                //     <div>
+                //       <div className="card-separator"></div>
+                //       <div className="explore-bottom">
+                //         {/* <img
+                //             src={bottomContainers[0]?.image?.url}
+                //             alt={bottomContainers[0]?.text}
+                //             style={{ height: "18px" }}
+                //         /> */}
+                //         {/* <div className="res-bottom-text">{bottomContainers[0]?.text}</div> */}
+                //       </div>
+                //     </div>
+                //   )}
+                // </div>
+              );
+            })}
+          </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
 export default ExploreCard;
