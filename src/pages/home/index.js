@@ -5,40 +5,57 @@ import Footer from "../../components/common/footer";
 import Delivery from "../../components/delivery";
 import DiningOut from "../../components/dining out";
 import NightLife from '../../components/nightlife';
+import 
+    {Routes,Route,BrowserRouter} from "react-router-dom";
+import Menu from '../../components/common/menu';
 
 
+const HomePage = () => {
+    const [activeTab, setActiveTab] = useState("Delivery");
+    const tabs=()=>{
+        return (
+            <>
 
-    const HomePage = () => {
-       const [activeTab, setActiveTab]= useState("Delivery");
+            <TabOptions activeTab={activeTab} setActiveTab={setActiveTab} />
+                {getCorrectScreen(activeTab)}
+            </>
+        )
+    }
 
     return (
-    <div> 
-        <Header /> 
-        <TabOptions activeTab={activeTab} setActiveTab={setActiveTab} />
-        {getCorrectScreen(activeTab)}
-        
-        {/* different screen */}
+        <>
+            <Header />
 
-        <Footer />
+            <BrowserRouter>
+                <Routes>
+                    <Route exact path="/" element={tabs()} />
+                    <Route exact path="/menu/:id" element={<Menu/>} />
+                    
+                </Routes>
 
-    </div>
+                
+
+
+            </BrowserRouter>
+                <Footer />
+        </>
     );
-    };
+};
 
 
-    const getCorrectScreen = (tab) => {
-        // eslint-disable-next-line default-case
-        switch (tab){
-            case "Delivery":
-                return <Delivery />;
-            case "Dining Out":
-                return <DiningOut />;
-            case "NightLife":
-                return <NightLife />;
-            default:
-                return <Delivery />;
-        }
+const getCorrectScreen = (tab) => {
+    // eslint-disable-next-line default-case
+    switch (tab) {
+        case "Delivery":
+            return <Delivery />;
+        case "Dining Out":
+            return <DiningOut />;
+        case "NightLife":
+            return <NightLife />;
+        default:
+            return <Delivery />;
     }
+}
 
 
 

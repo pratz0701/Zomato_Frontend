@@ -3,8 +3,13 @@
     padding: 10px;
     border-radius: 15px;
     border: 1px solid transparent;
+    transition: 1s;
 }
 
+.explore-card:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
 .explore-card-cover {
     height: 248px;
     width: 328px;

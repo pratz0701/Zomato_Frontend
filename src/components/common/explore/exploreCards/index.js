@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./exploreCard.css";
 import "../explore.css";
-// import { FcApproval } from "react-icons/fc";
-// import { FaGithub } from "react-icons/fa";
+import Menu from '../../menu/index.js'
 
 const ExploreCard = ({ restaurant }) => {
-  useEffect(() => {
-    console.log(JSON.parse(JSON.stringify(restaurant)));
-  }, [restaurant]);
+  let navigate = useNavigate(); 
+  const showMenu=(id)=>{
+    let path = `/menu/${id}`; 
+    navigate(path);
+  }
 
   return (
     <div>
@@ -21,7 +23,7 @@ const ExploreCard = ({ restaurant }) => {
               return (
                 // <img src="https://i.ytimg.com/vi/Yg3GQemWXgc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBwFEL4wMdI7jHbTq38_eoxboF_SA" alt=" "/>
                 <div div>
-                <div className="explore-card cur-po">
+                <div className="explore-card cur-po" onClick={()=>showMenu(e.res_id)}>
                   <div className="explore-card-cover">
                     <img
                       src="https://b.zmtcdn.com/data/dish_images/c2f22c42f7ba90d81440a88449f4e5891634806087.png"
