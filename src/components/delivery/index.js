@@ -53,6 +53,7 @@ const Delivery = () => {
         <Filters filterList = {deliveryFilters} />
       </div>
       <div>
+        {/* <Wecareaboutyou /> */}
         <DeliveryCollections />
         <TopBrands />
         <ExploreSection/>
