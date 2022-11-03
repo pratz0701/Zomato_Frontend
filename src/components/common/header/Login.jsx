@@ -4,7 +4,6 @@ import { Box } from '@mui/system';
 import React, { useState } from 'react'
 
 
-
 export const Login = ({open, close}) => {
     const style = {
       position: "absolute",
