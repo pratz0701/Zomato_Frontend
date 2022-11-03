@@ -71,3 +71,6 @@ export const Login = ({open, close}) => {
     </Modal>
   );
 }
+
+
+// tere bina mere dil nahi lgta yaarrr
