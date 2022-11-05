@@ -6,7 +6,7 @@
   @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
   body {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
+    font-size: 10px;
     line-height: 22px;
     color: #222;
   }
@@ -23,7 +23,7 @@
   }
   .section-title h2 {
     text-transform: capitalize;
-    font-size: 35px;
+    font-size: 28px;
     position: relative;
     display: inline-block;
     padding-bottom: 20px;
@@ -50,7 +50,7 @@
   }
   .menu-column h4 {
     text-transform: capitalize;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 500;
     margin-bottom: 20px;
     position: relative;
@@ -81,7 +81,7 @@
   
   .single-menu .menu-content h5 {
     text-transform: capitalize;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     border-bottom: 1px dashed #222;
     padding-bottom: 5px;

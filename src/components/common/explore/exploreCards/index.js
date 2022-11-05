@@ -26,20 +26,20 @@ const ExploreCard = ({ restaurant }) => {
                 <div className="explore-card cur-po" onClick={()=>showMenu(e.res_id)}>
                   <div className="explore-card-cover">
                     <img
-                      src="https://b.zmtcdn.com/data/dish_images/c2f22c42f7ba90d81440a88449f4e5891634806087.png"
+                      src={e.res_img}
                       alt={e.res_name}
                       className="explore-card-image"
                       
                     />
-                    <div className="delivery-time">40 min</div>
-                    <div className="pro-off">ProOff</div>
-                    <div className="discount absolute-center">Discount</div>
+                    <div className="delivery-time">{e.delivery_time} min</div>
+                    <div className="pro-off">{e.promo}</div>
+                    {/* <div className="discount absolute-center">Discount</div> */}
                   </div>
                   <div className="res-row">
                     <div className="res-name" style={{textTransform:"capitalize"}}>{e.res_name}</div>
                     {1 && (
                       <div className="res-rating absolute-center">
-                        {} <i className="fi fi-rr-star absolute-center"></i>
+                        {e.rating} <i className="fi fi-rr-star absolute-center"></i>
                       </div>
                     )}
                   </div>
@@ -58,7 +58,7 @@ const ExploreCard = ({ restaurant }) => {
                     //   }
                       // </div>
                     }
-                    {1 && <div className="res-price">100rs</div>}
+                    {1 && <div className="res-price">{e.price}</div>}
                   </div>
                   {1 > 0 && (
                     <div>
@@ -69,7 +69,7 @@ const ExploreCard = ({ restaurant }) => {
                             alt={bottomContainers[0]?.text}
                             style={{ height: "18px" }}
                         /> */}
-                        {/* <div className="res-bottom-text">{bottomContainers[0]?.text}</div> */}
+                        <div className="res-bottom-text">1300 orders have been placed</div>
                       </div>
                     </div>
                   )}

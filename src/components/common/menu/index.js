@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import "./index.css";
+// import Cart from "./cartbutton/index"
 
 const Menu = () => {
     const [menu, setMenu] = useState([]);
@@ -40,7 +41,7 @@ const Menu = () => {
                                 <div class="single-menu" key={e.food_id}>
                                     <img src="https://via.placeholder.com/150C" alt="" />
                                     <div class="menu-content">
-                                        <h5>
+                                        <h5 >
                                             {e.food_name} <span>Rs {e.price}</span> <span><FontAwesomeIcon icon={faCartPlus} style={{'color':'grey'}} className='mx-3' onClick={()=>sendItem(e)}></FontAwesomeIcon></span>
                                         </h5>
                                         <p>Lorem ipsum dolor sit amet.</p>
