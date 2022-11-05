@@ -24,6 +24,7 @@ export const Login = ({ open, close, setUser }) => {
     border: "none",
   };
   const [loginDetails, setLoginDetails] = useState({
+    username:"",
     email: "",
     password: "",
   });
@@ -32,8 +33,9 @@ export const Login = ({ open, close, setUser }) => {
     const { name, value } = e.target;
     setLoginDetails({
       ...loginDetails,
-      [name]: value,
+      [name]: value
     });
+    console.log(loginDetails)
   };
 
   const handleSubmit = () => {
@@ -52,6 +54,7 @@ export const Login = ({ open, close, setUser }) => {
           console.log(data);
           window.localStorage.setItem("id", data.id);
           window.localStorage.setItem("email", data.email);
+          window.localStorage.setItem("username", data.username);
           setLoading(false);
           setUser(data);
           close();
@@ -79,6 +82,7 @@ export const Login = ({ open, close, setUser }) => {
           <Close onClick={close} style={{ color: "red", cursor: "pointer" }} />
         </Stack>
         <Stack spacing={2} sx={{ mt: "2rem" }}>
+          <TextField name="username" onChange={handleChange} placeholder="Username" />
           <TextField name="email" onChange={handleChange} placeholder="Email" />
           <TextField
             name="password"

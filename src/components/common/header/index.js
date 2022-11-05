@@ -2,6 +2,8 @@ import { Button } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React, { useState } from "react";
 import "./header.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot ,faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 import { Login } from "./Login";
 //import Login from "./login/index"
 import Signup from "./signup/index";
@@ -15,6 +17,7 @@ const Header = () => {
       ? {
           id: window.localStorage.getItem("id"),
           email: window.localStorage.getItem("email"),
+          username: window.localStorage.getItem("username")
         }
       : null
   );
@@ -31,14 +34,14 @@ const Header = () => {
         <div className="header-location-search-container">
           <div className="location-wrapper">
             <div className="location-icon-name">
-              <i className="fi fi-rr-marker absolute-center location-icon"></i>
+              <FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon>
               <div>Gurgoan</div>
             </div>
             <i className="fi fi-rr-caret-down absolute center "></i>
           </div>
           <div className="location-search-separator"></div>
           <div className="header-searchbar">
-            <i className="fi fi-rr-search absolute-center search-icon"></i>
+          <FontAwesomeIcon icon={faMagnifyingGlass}></FontAwesomeIcon>
             <input
               style={{ width: "400px" }}
               placeholder="Search for restaurant , cuisine or a dish"
@@ -71,7 +74,7 @@ const Header = () => {
                   <Button>Signup</Button>
                 </>
               ) : (
-                <>Welcome, {user?.email}</>
+                <>Welcome, {user.username}</>
               )}
             </Stack>
             <Login
