@@ -4,6 +4,7 @@ import Filters from '../common/filters';
 import DeliveryCollections from './delivery collection';
 import "./delivery.css";
 import TopBrands from './topbrands';
+import Hungry from '../common/hungry/index'
 
 
 const deliveryFilters=[
@@ -54,6 +55,7 @@ const Delivery = () => {
       </div>
       <div>
         {/* <Wecareaboutyou /> */}
+        <Hungry/>
         <DeliveryCollections />
         <TopBrands />
         <ExploreSection/>

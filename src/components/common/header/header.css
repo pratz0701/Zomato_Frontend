@@ -9,6 +9,7 @@
     height: 27px;
     max-width: 140px;
     margin-right: 24px;
+     
 }
 
 .header-right{
@@ -187,3 +188,4 @@ button > h1.signup {
     display: none !important;
   }
 }
+

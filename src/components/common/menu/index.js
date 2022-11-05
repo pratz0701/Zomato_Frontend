@@ -39,7 +39,7 @@ const Menu = () => {
                             <>
                                 <div className="bada_bada max-width"></div>
                                 <div class="single-menu" key={e.food_id}>
-                                    <img src="https://via.placeholder.com/150C" alt="" />
+                                    <img src={e.food_img} alt="" />
                                     <div class="menu-content">
                                         <h5 >
                                             {e.food_name} <span>Rs {e.price}</span> <span><FontAwesomeIcon icon={faCartPlus} style={{'color':'grey'}} className='mx-3' onClick={()=>sendItem(e)}></FontAwesomeIcon></span>

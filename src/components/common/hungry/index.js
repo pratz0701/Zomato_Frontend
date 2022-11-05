@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import NextArrow from "../../common/carousel/nextArrow";
 import PrevArrow from "../../common/carousel/prevArrow";
-import "./topBrands.css";
+import "./hungry.css";
 
 const topBrandsList = [
   {
@@ -69,10 +69,10 @@ const settings = {
   prevArrow: <PrevArrow />,
 };
 
-const TopBrands = () => {
+const Hungry = () => {
   return (
     <div className="top-brands max-width margin">
-      <div className="collection-title">Top brands for you</div>
+      <div className="collection-title">Hungry? Order Quickly with your regulars!!</div>
       <Slider {...settings}>
         {topBrandsList.map((brand) => (
           <div>
@@ -90,4 +90,4 @@ const TopBrands = () => {
   );
 };
 
-export default TopBrands;
+export default Hungry;
