@@ -58,7 +58,7 @@ const Menu = () => {
                             <>
                                 <div className="bada_bada max-width"></div>
                                 <div class="single-menu" key={e.food_id}>
-                                    <img src={e.food_img} alt="" />
+                                    <img src={e.food_img} alt="" classname="menu-img"/>
                                     <div class="menu-content">
                                         <h5 >
                                             {e.food_name} <span>Rs {e.price}</span> <span><FontAwesomeIcon icon={faCartPlus} style={{'color':'grey','cursor':'pointer'}} className='mx-3' onClick={()=>sendItem(e)}></FontAwesomeIcon></span>
