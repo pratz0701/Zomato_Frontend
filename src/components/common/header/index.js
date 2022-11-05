@@ -74,7 +74,7 @@ const Header = () => {
                   <Button>Signup</Button>
                 </>
               ) : (
-                <>Welcome, {user.username}</>
+                <div className="user_size">Welcome, {user.username}</div>
               )}
             </Stack>
             <Login
