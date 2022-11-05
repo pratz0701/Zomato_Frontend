@@ -8,7 +8,7 @@ import { Login } from "./Login";
 // import Login from "./login/index"
 // import Signup from "./signup/index";
 
-const Header = () => {
+const Header = () => {     
   const [openLogin, setOpenLogin] = useState(false);
   const [openSignup, setOpenSignup] = useState(false);
 
