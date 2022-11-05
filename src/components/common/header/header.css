@@ -80,6 +80,15 @@
      justify-content: space-between;
      width: 20%;
      align-items: center;
+     font-size: 10px;
+}
+
+.user_size{
+  font-size: 20px;
+}
+
+.location-size{
+  font-size: 12px;
 }
 
 .header-profile-image{
@@ -125,6 +134,11 @@ button > h1.signup {
   height: 27px;
   margin-left: 15px;
   margin-top: 5px;
+}
+
+.user{
+  font-size: 50px;
+  
 }
 
 @media screen and (max-width: 900px) {
