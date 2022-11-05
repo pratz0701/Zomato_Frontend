@@ -16,7 +16,8 @@ const Alert = () => {
         "zIndex":"10",
         "color":"white",
         'borderRadius':"10px",
-        "fontWeight":"bolder"
+        "fontWeight":"bolder",
+        'position':'fixed'
     }
   return (
     <>
