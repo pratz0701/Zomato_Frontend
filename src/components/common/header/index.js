@@ -34,14 +34,14 @@ const Header = () => {
         <div className="header-location-search-container">
           <div className="location-wrapper">
             <div className="location-icon-name">
-              <FontAwesomeIcon icon={faLocationDot}  ></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faLocationDot} className="location-icon" ></FontAwesomeIcon>
               <div>Gurgoan</div>
             </div>
             <i className="fi fi-rr-caret-down absolute center"></i>
           </div>
           <div className="location-search-separator"></div>
           <div className="header-searchbar">
-          <FontAwesomeIcon icon={faMagnifyingGlass}></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon absolute center"></FontAwesomeIcon>
             <input
               style={{ width: "400px" }}
               placeholder="Search for restaurant , cuisine or a dish"
