@@ -50,6 +50,12 @@
     margin-right: 8px;
     
 }
+.caret-icon{
+    color: var(--zomato-gray);
+    font-size: 15px;
+    margin-right: 8px;
+    
+}
 
 .location-search-separator{
     height: 20px;

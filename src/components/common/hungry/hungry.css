@@ -25,10 +25,26 @@
 }
 
 .color{
-    /* color: red; */
-    
+    color: rgb(224, 99, 99)
 }
+
 
 .background{
     background-color: rgb(241, 225, 228);
+}
+
+.res_name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 247, 247);
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    
 }

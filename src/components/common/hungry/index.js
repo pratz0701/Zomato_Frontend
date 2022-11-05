@@ -72,7 +72,9 @@ const settings = {
 const Hungry = () => {
   return (
     <div className="top-brands max-width margin background">
-      <div className="collection-title color">Hungry? Order Quickly with your regulars!!</div>
+      <div className="collection-title color">
+        Hungry? Order Quickly with your regulars!!
+      </div>
       <Slider {...settings}>
         {topBrandsList.map((brand) => (
           <div>
@@ -82,6 +84,8 @@ const Hungry = () => {
                 src={brand.cover}
                 alt={brand.time}
               />
+              <div className="res_name">res</div>
+              <div className="res_name">dish_name</div>
             </div>
           </div>
         ))}
