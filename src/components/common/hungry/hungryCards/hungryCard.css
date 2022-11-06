@@ -1,24 +1,66 @@
 
-.slider{
-    /* overflow: hidden; */
-    display: grid;
+.slider-wrapper{
+    position: relative;
+    height: 370px;
+    width: max-width;
+    margin: auto;
     place-items: center;
+    overflow: hidden;
+    
 }
 
-.slide-track{
-    /* display: flex; */
-    /* width: calc(250px*18); */
+.slider{
+    display: flex;
+    width: calc(250*6);
+    animation: slidescroll 40s linear infinite;
+    padding: 25px 5px 5px 5px;
+}
+
+@keyframes slidescroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-300px*1));
+    }
+}
+.slide{
+    width: 450px;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    /* overflow: hidden; */
+    perspective: 100px;
+    cursor: pointer;
+}
+
+.slider-wrapper::before,
+.slider-wrapper::after
+{
+    background: linear-gradient(to right,rgba(255,255,2551) 0%,rgba(255,255,255,0));
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    z-index:2;
+}
+
+.slider-wrapper::before{
+    /* left:20px; */
+}
+
+.slider-wrapper::after{
+    right: -2px;
+    transform: rotateZ(180deg);
 }
 
 .hungry-card {
-    margin: 12px 0px 24px 0px;
+    /* margin: 12px 0px 24px 0px; */
     padding: 10px;
     border-radius: 15px;
     border: 1px solid transparent;
     transition: 1s;
-    /* display: flex; */
-    /* align-items: center; */
-    /* padding: 15px; */
 }
 
 .hungry-card:hover{
@@ -26,8 +68,8 @@
     
 }
 .hungry-card-cover {
-    height: 160px;
-    width: 200px;
+    height: 200px;
+    width: 250px;
     border-radius: 15px;
     position: relative;
 }
@@ -37,6 +79,10 @@
     width: 100%;
     object-fit: cover;
     border-radius: 15px;
+}
+
+.margin-title{
+    margin-top: 20px;
 }
 
 .delivery-time-hungry {
@@ -98,7 +144,7 @@
     color: var(--heading-text);
 }
 
-.res-rating-hungry  {
+.res-rating-hungry {
     padding: 0px 8px;
     font-size: 13px;
     font-weight: 600;
@@ -108,12 +154,12 @@
     height: 24px;
 }
 
-.res-rating-hungry  i {
+.res-rating-hungry i {
     font-size: 10px;
     margin-left: 2px;
 }
 
-.res-cuisine-hungry  {
+.res-cuisine-hungry {
     max-width: 56%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -121,23 +167,23 @@
     font-size: 14px;
 }
 
-.res-cuisine-tag-hungry  {
+.res-cuisine-tag-hungry {
     margin-right: 4px;
     color: var(--inactive-text);
 }
 
-.res-price-hungry  {
+.res-price-hungry {
     font-size: 14px;
     color: var(--inactive-text);
 }
 
-.hungry-bottom-hungry  {
+.hungry-bottom {
     display: flex;
     align-items: center;
     max-width: 100%;
 }
 
-.res-bottom-text-hungry  {
+.res-bottom-text-hungry {
     font-size: 12px;
     color: var(--inactive-text);
     max-width: 200px;
@@ -146,7 +192,7 @@
     margin-left: 8px;
 }
 
-.card-separator-hungry  {
+.card-separator-hungry {
     height: 1px;
     margin: 10px 0px 5px;
     background-color: var(--border-white);
