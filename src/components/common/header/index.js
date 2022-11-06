@@ -83,7 +83,7 @@ const Header = () => {
                   <Button>Signup</Button>
                 </>
               ) : (
-                <div className="user_size">Welcome, {user.username}</div>
+                <div className="user_size" style={{'textTransform':'capitalize'}}>Welcome, {user.username}</div>
               )}
             </Stack>
             <Login
