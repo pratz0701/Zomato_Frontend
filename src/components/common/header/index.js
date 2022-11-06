@@ -3,7 +3,7 @@ import { Box, Stack } from "@mui/system";
 import React, { useState } from "react";
 import "./header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot ,faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import { faCaretDown, faLocationDot ,faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 import { Login } from "./Login";
 // import Login from "./login/index"
 // import Signup from "./signup/index";
@@ -34,14 +34,23 @@ const Header = () => {
         <div className="header-location-search-container">
           <div className="location-wrapper">
             <div className="location-icon-name">
-              <FontAwesomeIcon icon={faLocationDot} className="location-icon" ></FontAwesomeIcon>
-              <div>Gurgoan</div>
+              <FontAwesomeIcon
+                icon={faLocationDot}
+                className="location-icon absolute centre"
+              ></FontAwesomeIcon>
+              <div className="search-input">Gurgoan</div>
             </div>
-            <i className="fi fi-rr-caret-down absolute center"></i>
+            <FontAwesomeIcon
+              icon={faCaretDown}
+              className="absolute centre caret-icon"
+            ></FontAwesomeIcon>
           </div>
           <div className="location-search-separator"></div>
           <div className="header-searchbar">
-          <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon absolute center"></FontAwesomeIcon>
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              className="search-icon absolute centre"
+            ></FontAwesomeIcon>
             <input
               style={{ width: "400px" }}
               placeholder="Search for restaurant , cuisine or a dish"

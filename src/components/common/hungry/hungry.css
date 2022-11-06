@@ -1,34 +1,10 @@
-.top-brands {
-  padding-top: 30px;
+.hungry-section{
+    margin-top: 30px;
 }
 
-.top-brands-cover {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  background-color: var(--primary-bg);
-  box-shadow: var(--collection-shadow);
-  border: 0.5px solid var(--border-white);
-}
-
-.top-brands-image {
-  border-radius: inherit;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.margin{
-    margin-bottom: 50px;
-    padding: 10px 10px 10px 10px;
-    border-radius: 5px;
-}
-
-.color{
-    /* color: red; */
-    
-}
-
-.background{
-    background-color: rgb(241, 225, 228);
+.hungry-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    justify-content: space-around;
 }

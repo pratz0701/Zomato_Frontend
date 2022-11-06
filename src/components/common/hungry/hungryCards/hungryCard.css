@@ -1,0 +1,204 @@
+
+.slider-wrapper{
+    position: relative;
+    height: 370px;
+    width: max-width;
+    margin: auto;
+    place-items: center;
+    overflow: hidden;
+    
+}
+
+.slider{
+    display: flex;
+    width: calc(250*6);
+    animation: slidescroll 40s linear infinite;
+    padding: 25px 5px 5px 5px;
+}
+
+@keyframes slidescroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-300px*1));
+    }
+}
+.slide{
+    width: 450px;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    /* overflow: hidden; */
+    perspective: 100px;
+    cursor: pointer;
+}
+
+.slider-wrapper::before,
+.slider-wrapper::after
+{
+    background: linear-gradient(to right,rgba(255,255,2551) 0%,rgba(255,255,255,0));
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    z-index:2;
+}
+
+.slider-wrapper::before{
+    /* left:20px; */
+}
+
+.slider-wrapper::after{
+    right: -2px;
+    transform: rotateZ(180deg);
+}
+
+.hungry-card {
+    /* margin: 12px 0px 24px 0px; */
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    transition: 1s;
+}
+
+.hungry-card:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+.hungry-card-cover {
+    height: 200px;
+    width: 250px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.hungry-card-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.margin-title{
+    margin-top: 20px;
+}
+
+.delivery-time-hungry {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    opacity: 0.8;
+    background-color: var(--primary-bg);
+    font-weight: 600;
+    font-size: 12px;
+    padding: 2px 5px 3px;
+    border-radius: 4px;
+}
+
+.pro-off-hungry {
+    position: absolute;
+    left: 0px;
+    bottom: 40px;
+    background-color: var(--tag-red);
+    color: var(--primary-bg);
+    font-size: 14px;
+    padding: 0px 6px;
+    border-radius: 0px 2px 2px 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+.discount-hungry {
+    position: absolute;
+    left: 0px;
+    bottom: 14px;
+    background-color: var(--tag-blue);
+    color: var(--primary-bg);
+    font-size: 14px;
+    padding: 0px 6px;
+    border-radius: 0px 2px 2px 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+.res-row-hungry {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0px 6px;
+}
+
+.res-name-hungry {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--heading-text);
+}
+
+.res-rating-hungry {
+    padding: 0px 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-bg);
+    background-color: var(--tag-green);
+    border-radius: 6px;
+    height: 24px;
+}
+
+.res-rating-hungry i {
+    font-size: 10px;
+    margin-left: 2px;
+}
+
+.res-cuisine-hungry {
+    max-width: 56%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.res-cuisine-tag-hungry {
+    margin-right: 4px;
+    color: var(--inactive-text);
+}
+
+.res-price-hungry {
+    font-size: 14px;
+    color: var(--inactive-text);
+}
+
+.hungry-bottom {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+
+.res-bottom-text-hungry {
+    font-size: 12px;
+    color: var(--inactive-text);
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 8px;
+}
+
+.card-separator-hungry {
+    height: 1px;
+    margin: 10px 0px 5px;
+    background-color: var(--border-white);
+}
+
+.hungry-card:hover {
+    background-color: var(--primary-bg);
+    border: 1px solid var(--border-white);
+}

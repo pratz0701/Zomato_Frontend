@@ -72,11 +72,12 @@
   }
   .single-menu img {
     flex:2;
-    max-width: 110px;
-    border: 1px dashed #ddd;
+    max-width: 90px;
+    /* border: 1; */
     padding: 3px;
     margin-right: 15px;
-   
+    height: 90px;
+    margin: 5px 5px 5px 5px;
   }
   
   .single-menu .menu-content h5 {
