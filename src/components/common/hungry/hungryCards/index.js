@@ -1,16 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./hungryCard.css";
 import "../hungry.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar} from "@fortawesome/free-solid-svg-icons";
 // import Menu from "../../menu/index.js";
 
 const HungryCard = ({ restaurant }) => {
+  const [food, setFood] = useState([]);
+
   let navigate = useNavigate();
   const showMenu = (id) => {
     let path = `/menu/${id}`;
     navigate(path);
   };
-
+  useEffect(() => {
+    const options = {
+      method: "POST",
+      body: JSON.stringify({ user_id: window.localStorage.getItem("id") }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    };
+    const getRec = async () => {
+      const res = await fetch(
+        "http://3.111.196.246/main/recommendation/",
+        options
+      );
+      const data = await res.json();
+      const finArr = [];
+      let arr = data.response;
+      arr.forEach((e) => {
+        finArr.push(e[0]);
+      });
+      console.log(finArr);
+      setFood(finArr);
+    };
+    getRec();
+  }, []);
   return (
     <div>
       <div>
@@ -20,26 +47,24 @@ const HungryCard = ({ restaurant }) => {
 
         <div className="max-width hungry-section">
           <div className="slider-wrapper">
-            <div className="max-width  slider">
-              {JSON.parse(JSON.stringify(restaurant)).map((e) => {
+            <div className="max-width slider">
+              {food.map((e) => {
                 return (
-                  // <img src="https://i.ytimg.com/vi/Yg3GQemWXgc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBwFEL4wMdI7jHbTq38_eoxboF_SA" alt=" "/>
-                  <div className="hungry-main slide">
+                  <div className="hungry-main slide" key={e.food_id}>
                     <div
                       className="hungry-card cur-po"
-                      onClick={() => showMenu(e.res_id)}
+                      onClick={() => showMenu(e.food_id)}
                     >
                       <div className="hungry-card-cover">
                         <img
-                          src={e.res_img}
-                          alt={e.res_name}
+                          src={e.food_img}
+                          alt={e.food_name}
                           className="hungry-card-image"
                         />
                         <div className="delivery-time-hungry ">
-                          {e.delivery_time} min
+                        {Math.round((Math.random()*40 + 30))} min
                         </div>
-                        <div className="pro-off-hungry ">{e.promo}</div>
-                        {/* <div className="discount absolute-center">Discount</div> */}
+                        <div className="pro-off-hungry "></div>
                       </div>
                       <div className="res-row-hungry ">
                         <div
@@ -48,10 +73,14 @@ const HungryCard = ({ restaurant }) => {
                         >
                           {e.res_name}
                         </div>
+                        <div style={{'position':'absolute','left':'0','padding-left':'1.6rem','width':'200px','overflow':'hidden'}}>
+
+                          <h6 style={{'textTransform':'capitalize','textAlign':'left'}}>{e.food_name}</h6>
+                        </div>
                         {1 && (
                           <div className="res-rating-hungry  absolute-center">
-                            {e.rating}{" "}
-                            <i className="fi fi-rr-star absolute-center"></i>
+                            {Math.round((Math.random()*5 + 1))} <span><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></span>
+                            {/* <i className="fi fi-rr-star absolute-center"></i> */}
                           </div>
                         )}
                       </div>
@@ -71,7 +100,7 @@ const HungryCard = ({ restaurant }) => {
                           // </div>
                         }
                         {1 && (
-                          <div className="res-price-hungry ">{e.price}</div>
+                          <div className="res-price-hungry ">{e.price} Rs</div>
                         )}
                       </div>
                       {1 > 0 && (
@@ -84,7 +113,7 @@ const HungryCard = ({ restaurant }) => {
                             style={{ height: "18px" }}
                         /> */}
                             <div className="res-bottom-text-hungry ">
-                              1300 orders have been placed
+                              tags shown
                             </div>
                           </div>
                         </div>

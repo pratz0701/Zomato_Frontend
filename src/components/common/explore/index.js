@@ -18,7 +18,7 @@ const fetchAPIdata =  ()=>{
     .then(res=>res.json())
     .then(data=>{
       setRestaurants(data.response);
-      console.log("yha hu"+restaurants)
+      // console.log("yha hu"+restaurants)
     })
     
     
